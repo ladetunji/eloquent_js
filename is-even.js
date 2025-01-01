@@ -1,19 +1,18 @@
-function isEven(n) {
-	function solve(c, h) {
-		if (c == 0) {
-			return true;
-			return h;
+function isEven(number) {
+	function solve(current, history) {
+		if (current == 0) {
+			return `${number} is an even number.`;
+			return history;
 		}
-		else if (c == 1) {
-			return false;
-			return h;
+		else if (current == 1) {
+			return number + " is an odd number.";
+			return history;
 		}
 		else {
-			return solve(c-2, `(${h} - 2)`);
+			return solve(current - 2, `(${history} - 2)`);
 		}
 	}
-	return solve(n, `${n}`);
+	return solve(number, `${number}`);
 }
 
-console.log(isEven(9));
-
+console.log(isEven(72));
