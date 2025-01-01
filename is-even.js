@@ -8,6 +8,10 @@ function isEven(n) {
 			return false;
 			return h;
 		}
+		else if (c < 0) {
+			return solve(-c, h);
+			return h;
+		}
 		else {
 			return solve(c-2, `(${h} - 2)`);
 		}
@@ -15,5 +19,4 @@ function isEven(n) {
 	return solve(n, `${n}`);
 }
 
-console.log(isEven(9));
-
+console.log(isEven(-3));
